@@ -1,6 +1,6 @@
 import React from 'react';
 import Field from '../Common/Field'
-import {withFormik} from 'formik';
+//import {withFormik} from 'formik';
 
 const fields = {
   section:[
@@ -81,23 +81,4 @@ class Contacts extends React.Component {
   }
 }
 
-export default withFormik({
-  mapPropsToValues:()=>({
-    name:'',
-    email:'',
-    phone:'',
-    message:'',
-  }),
-  validate: values =>{
-    const errors ={};
-    Object.keys(values).map(v =>{
-      if(!values[v]){
-        errors[v]="Required";
-      }
-    })
-    return errors;
-  },
-  handleSubmit: (values,{setSubmitting}) => {
-    alert("you've submitted the form");
-  }
-})(Contacts);
+export default Contacts;
