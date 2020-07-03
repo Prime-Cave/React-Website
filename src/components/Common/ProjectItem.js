@@ -6,7 +6,7 @@ class ProjectModal extends React.Component {
       <div
         className="portfolio-modal modal fade"
         id={this.props.Id}
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         aria-hidden="true"
       >
