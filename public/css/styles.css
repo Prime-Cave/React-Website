@@ -17,18 +17,18 @@
   --pink: #e83e8c;
   --red: #dc3545;
   --orange: #fd7e14;
-  --yellow: #fed136;
+  --yellow: #36cffe;
   --green: #28a745;
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #fed136;
+  --primary: #36f1fe;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
-  --warning: #fed136;
+  --warning: #4dfe36;
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
@@ -164,7 +164,7 @@ a {
   background-color: transparent;
 }
 a:hover {
-  color: #e6b301;
+  color: #235691;
   text-decoration: underline;
 }
 
@@ -2592,7 +2592,7 @@ fieldset:disabled a.btn {
 .btn-warning {
   color: #fff;
   background-color: #fed136;
-  border-color: #fed136;
+  border-color: #367cfe;
 }
 .btn-warning:hover {
   color: #fff;
