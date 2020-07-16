@@ -4,6 +4,14 @@ export const login = (email, pass) =>{
     return (dispatch) =>{
         API.login(email, pass, res => {
             console.log("Result", res.data);
+            dispatch({
+              type: "LOGIN",
+              payload: { 
+                  email:email,
+                  token:res.data.id,
+                  userId:res.data.userId
+                 },
+            });
         })
     }/*
     return{
@@ -17,4 +25,4 @@ export const register = (email, pass ) =>{
         type : 'REGISTER',
         payload:[email,pass]
     }
-}
+}  
