@@ -8,9 +8,15 @@ import Home from "./components/Pages/Home";
 import About from "./components/Pages/About";
 import Contacts from "./components/Pages/Contacts";
 import Login from "./components/Pages/Login";
-import Dashboard from "./components/Pages/Dashboard";
+
+//Admin Pages
+import Dashboard from "./components/Pages/Admin/Dashboard";
+import Users from './components/Pages/Admin/Users';
+import Posts from './components/Pages/Admin/Posts';
+
 
 import AdminWrapper from "./components/AdminWrapper";
+import LoginWrapper from './components/LoginWrapper';
 
 class App extends React.Component {
     render (){
@@ -18,12 +24,58 @@ class App extends React.Component {
         <div>
           <Router>
             <Route
-              path="/admin"
-              render={props  => {
+              path="/admin/users"
+              render={(props) => {
                 return (
-                  <AdminWrapper>
-                    {this.props.auth.token ? <Dashboard /> : <Login />}
-                  </AdminWrapper>
+                  <div>
+                    {this.props.auth.token ? (
+                      <AdminWrapper>
+                        <Posts />
+                      </AdminWrapper>
+                    ) : (
+                      <LoginWrapper>
+                        <Login />
+                      </LoginWrapper>
+                    )}
+                  </div>
+                );
+              }}
+            />
+            <Route
+              path="/admin/posts"
+              render={(props) => {
+                return (
+                  <div>
+                    {this.props.auth.token ? (
+                      <AdminWrapper>
+                        <Users />
+                      </AdminWrapper>
+                    ) : (
+                      <LoginWrapper>
+                        <Login />
+                      </LoginWrapper>
+                    )}
+                  </div>
+                );
+              }}
+            />
+
+            <Route
+              exact={true}
+              path="/admin"
+              render={(props) => {
+                return (
+                  <div>
+                    {this.props.auth.token ? (
+                      <AdminWrapper>
+                        <Dashboard />
+                      </AdminWrapper>
+                    ) : (
+                      <LoginWrapper>
+                        <Login />
+                      </LoginWrapper>
+                    )}
+                  </div>
                 );
               }}
             />
