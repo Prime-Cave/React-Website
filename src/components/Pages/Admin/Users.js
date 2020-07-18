@@ -13,7 +13,7 @@ class Users extends React.Component {
         <div>
           <h1>Users Page</h1>
           <TableView 
-            columns={[columns]}
+            columns={columns}
             rows={[]}
           />
         </div>
