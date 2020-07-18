@@ -13,29 +13,38 @@ class TableView extends React.Component{
     render(){
             const {rows, columns } = this.props;
         return (
-          <Paper>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  {columns ? 
-                        columns.map((col, i) => {
-                        return <TableCell key={i}>{col}</TableCell>;
+          
+            <Paper>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    {columns
+                      ? columns.map((col, i) => {
+                          return (
+                            <TableCell key={i}>
+                              <div>{col.label}</div>
+                            </TableCell>
+                          );
+                        })
+                      : null}
+                  </TableRow>
+                </TableHead>
+
+                <TableBody>
+                  {rows
+                    ? rows.map((row, i) => {
+                        return columns.map((col, colIndex) => {
+                          return (
+                            <TableCell>
+                              <div>{row[col.name]}</div>
+                            </TableCell>
+                          );
+                        });
                       })
                     : null}
-                </TableRow>
-              </TableHead>
-
-              <TableBody>
-                {rows ? 
-                    rows.map((row, i) => {
-                      return columns.map((col, colIndex) => {
-                        return <TableCell>{row[col.name]}</TableCell>;
-                      });
-                    })
-                  : null}
-              </TableBody>
-            </Table>
-          </Paper>
+                </TableBody>
+              </Table>
+            </Paper>
         );
     }
 }
