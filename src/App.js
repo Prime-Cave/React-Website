@@ -30,7 +30,7 @@ class App extends React.Component {
                   <div>
                     {this.props.auth.token ? (
                       <AdminWrapper>
-                        <Posts />
+                        <Users />
                       </AdminWrapper>
                     ) : (
                       <LoginWrapper>
@@ -38,7 +38,7 @@ class App extends React.Component {
                       </LoginWrapper>
                     )}
                   </div>
-                );
+                )
               }}
             />
             <Route
@@ -48,7 +48,7 @@ class App extends React.Component {
                   <div>
                     {this.props.auth.token ? (
                       <AdminWrapper>
-                        <Users />
+                        <Posts />
                       </AdminWrapper>
                     ) : (
                       <LoginWrapper>
