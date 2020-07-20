@@ -19,7 +19,7 @@ class Posts extends React.Component {
       <div>
         <h1>Posts</h1>
 
-        <TableView columns={columns} rows={[posts]} />
+        <TableView columns={columns} rows={posts} />
       </div>
     );
   }
