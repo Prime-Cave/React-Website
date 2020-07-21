@@ -1,6 +1,7 @@
 const defaultState = {
     users: [],
-    posts: []
+    posts: [],
+    post: {}
 }
 const admin = (state = defaultState, action) => {
     switch(action.type){
@@ -13,6 +14,16 @@ const admin = (state = defaultState, action) => {
             return {
                 ...state,
                 posts: action.payload
+            }
+        case 'POST_ADDED':
+            return {
+                ...state,
+                posts: state.posts.concat(action.payload)
+            }
+        case 'GOT_SINGLE_POST':
+            return {
+                ...state,
+                post: action.payload
             }
             default:
                 return state

@@ -20,6 +20,20 @@ const API = {
         .then(res => {
             success(res);
         });
-    }
+    },
+    addPost: (post,token, success) =>{
+        console.log("We are adding ", post)
+        axios.post(`${host}/api/Posts?access_token=${token}`, post)
+        .then(res =>{
+            success(res)
+        })
+    },
+    getSinglePost: (id,token, success) => {
+        console.log('This Post id is ', id)
+        axios.get(`${host}/api/Posts/${id}?access_token${token}`)
+        .then(res =>{
+            success(res)
+        })
+    }    
 }
 export default API
